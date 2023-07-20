@@ -1,0 +1,1 @@
+<script src="https://novu-web-component.netlify.app/index.js" type="text/javascript" defer></script>
