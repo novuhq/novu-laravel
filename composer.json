@@ -56,13 +56,6 @@
             }
         }
     },
-    "config": {
-        "sort-packages": true,
-        "preferred-install": "dist",
-        "allow-plugins": {
-            "pestphp/pest-plugin": true
-        }
-    },
     "minimum-stability": "dev",
     "prefer-stable": true
 }
