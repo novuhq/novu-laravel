@@ -16,7 +16,7 @@ A package to easily integrate your Laravel application with Novu.
 * [Installation](#installation)
 * [Usage](#usage)
     * [In-App Notifications](#in-app-notification-center)
-    * [Events](#events-send-notifications)
+    * [Events](#events)
     * [Subscribers](#subscribers)
     * [Topics](#topics)
     * [Activity](#activity)
@@ -106,7 +106,7 @@ Novu relies on its own JavaScript library to initiate and display the In-App Not
 
 **Note:** If you're using this package for a Laravel API Backend, you don't need to use this! Use the In-App Notification Center JavaScript library available for [Vue](https://docs.novu.co/notification-center/vue-component), [React](https://docs.novu.co/notification-center/react/react-components), [Angular](https://docs.novu.co/notification-center/angular-component) and [Vanilla JS](https://docs.novu.co/notification-center/web-component).
 
-### EVENTS - Send Notifications
+### EVENTS
 
 **Trigger** an event - send notification to subscribers:
 
