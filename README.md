@@ -142,20 +142,20 @@ You can use the `Novu` Facade or the `novu()` helper function to call the method
 use Novu\Laravel\Facades\Novu;
 
 $response = Novu::triggerEvent([
-    'name' => '<REPLACE_WITH_WORKFLOW_ID_FROM_ADMIN_PANEL>',
+    'name' => '<WORKFLOW_TRIGGER_ID_FROM_DASHBOARD>',
     'payload' => ['customVariables' => 'Hello'],
     'to' => [
-        'subscriberId' => '<SUBSCRIBER_ID_FROM_ADMIN_PANEL>',
+        'subscriberId' => '<SUBSCRIBER_ID_FROM_DASHBOARD>',
         'phone' => '07983887777'
     ]
 ])->toArray();
 
 // or you can use the novu() helper function like so:
 novu()->triggerEvent([
-    'name' => '<REPLACE_WITH_WORKFLOW_ID_FROM_ADMIN_PANEL>',
+    'name' => '<WORKFLOW_TRIGGER_ID_FROM_DASHBOARD>',
     'payload' => ['customVariables' => 'Hello'],
     'to' => [
-        'subscriberId' => '<SUBSCRIBER_ID_FROM_ADMIN_PANEL>',
+        'subscriberId' => '<SUBSCRIBER_ID_FROM_DASHBOARD>',
         'phone' => '07983887777'
     ]
 ])->toArray();
@@ -168,18 +168,18 @@ use Novu\Laravel\Facades\Novu;
 
 $response = Novu::bulkTriggerEvent([
     [
-        'name' => '<REPLACE_WITH_WORKFLOW_TRIGGER_ID_FROM_ADMIN_PANEL>', 
-        'to' => '<SUBSCRIBER_ID_FROM_ADMIN_PANEL>', 
+        'name' => '<WORKFLOW_TRIGGER_ID_FROM_DASHBOARD>', 
+        'to' => '<SUBSCRIBER_ID_FROM_DASHBOARD>', 
         'payload' => ['customVariables' => 'Hello']
     ],
     [
-        'name' => '<REPLACE_WITH_WORKFLOW_TRIGGER_ID_FROM_ADMIN_PANEL>', 
-        'to' => '<SUBSCRIBER_ID_FROM_ADMIN_PANEL>', 
+        'name' => '<WORKFLOW_TRIGGER_ID_FROM_DASHBOARD>', 
+        'to' => '<SUBSCRIBER_ID_FROM_DASHBOARD>', 
         'payload' => ['customVariables' => 'World']
     ],
     [
-        'name' => '<REPLACE_WITH_WORKFLOW_TRIGGER_ID_FROM_ADMIN_PANEL>', 
-        'to' => '<SUBSCRIBER_ID_FROM_ADMIN_PANEL>', 
+        'name' => '<WORKFLOW_TRIGGER_ID_FROM_DASHBOARD>', 
+        'to' => '<SUBSCRIBER_ID_FROM_DASHBOARD>', 
         'payload' => ['customVariables' => 'Again']
     ]
 ])->toArray();
@@ -187,18 +187,18 @@ $response = Novu::bulkTriggerEvent([
 // or you can use the novu() helper function like so:
 novu()->bulkTriggerEvent([
     [
-        'name' => '<REPLACE_WITH_WORKFLOW_TRIGGER_ID_FROM_ADMIN_PANEL>', 
-        'to' => '<SUBSCRIBER_ID_FROM_ADMIN_PANEL>', 
+        'name' => '<WORKFLOW_TRIGGER_ID_FROM_DASHBOARD>', 
+        'to' => '<SUBSCRIBER_ID_FROM_DASHBOARD>', 
         'payload' => ['customVariables' => 'Hello']
     ],
     [
-        'name' => '<REPLACE_WITH_WORKFLOW_TRIGGER_ID_FROM_ADMIN_PANEL>', 
-        'to' => '<SUBSCRIBER_ID_FROM_ADMIN_PANEL>', 
+        'name' => '<WORKFLOW_TRIGGER_ID_FROM_DASHBOARD>', 
+        'to' => '<SUBSCRIBER_ID_FROM_DASHBOARD>', 
         'payload' => ['customVariables' => 'World']
     ],
     [
-        'name' => '<REPLACE_WITH_WORKFLOW_TRIGGER_ID_FROM_ADMIN_PANEL>', 
-        'to' => '<SUBSCRIBER_ID_FROM_ADMIN_PANEL>', 
+        'name' => '<WORKFLOW_TRIGGER_ID_FROM_DASHBOARD>', 
+        'to' => '<SUBSCRIBER_ID_FROM_DASHBOARD>', 
         'payload' => ['customVariables' => 'Again']
     ]
 ])->toArray();
@@ -232,7 +232,7 @@ $response = Novu::triggerEvent([
 use Novu\Laravel\Facades\Novu;
 
 $response = Novu::broadcastEvent([
-    'name' => '<REPLACE_WITH_EVENT_NAME_FROM_ADMIN_PANEL>',
+    'name' => '<WORKFLOW_TRIGGER_ID_FROM_DASHBOARD>',
     'payload' => ['customVariables' => 'Hello'],
     'transactionId' => '<REPLACE_WITH_TRANSACTION_ID>'
 ])->toArray();
