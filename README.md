@@ -13,7 +13,7 @@
 [![License](https://poser.pugx.org/novu/novu-laravel/license.svg)](LICENSE.md)
 [![Total Downloads](https://img.shields.io/packagist/dt/novu/novu-laravel.svg)](https://packagist.org/packages/novu/novu-laravel)
 
-> A package to easily integrate your Laravel application with Novu.
+> A package to easily integrate Novu into your Laravel application. Send multi-channel (SMS, Email, Chat, Push, In-App) notifications and embed Notification Centers seamlessly in your app.
 
 ## Contents
 
