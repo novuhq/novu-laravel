@@ -60,7 +60,7 @@ class NovuServiceProvider extends ServiceProvider
      */
     protected function bootComponents()
     {
-        Blade::component('cloudinary::components.nc', $this->getComponentName('novu-notification-center'));
+        Blade::component('novu::components.nc', $this->getComponentName('notification-center'));
     }
     
     protected function getComponentName($componentName) 

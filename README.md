@@ -93,19 +93,35 @@ Open your `.env` file and add your API Key.
 NOVU_API_KEY=xxxxxxxxxxxxx
 ```
 
-***Note:** You need to get these credentials from your [Novu Dashboard](https://web.novu.co/settings)*
+**Note:** You need to get these credentials from your [Novu Dashboard](https://web.novu.co/settings).
 
 ## Usage
 
 ### In-App Notification Center
 
-Novu relies on its own JavaScript library to initiate and display the In-App Notification Center. You can load the JavaScript library by placing the @novuJS directive right before your application layout's closing </head> tag:
+Novu relies on its own JavaScript library to initiate and display the In-App Notification Center. You can load the JavaScript library by placing the @novuJS directive right before your application layout's closing `</head>` tag:
 
 ```html
 <head>
     ...
     @novuJS
 </head>
+```
+
+Use the `x-notification-center` Blade notification center component in the body like so:
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        ...
+        @novuJS
+    </head>
+    <body>
+        <x-notification-center app-id="<YOUR_APP_IDENTIFIER>" subscriber-id="<SUBSCRIBER_ID>" style="display: inline-flex">
+        </x-notification-center>
+    </body>
+</html>
 ```
 
 **Note:** If you're using this package for a Laravel API Backend, you don't need to use this! Use the In-App Notification Center JavaScript library available for [Vue](https://docs.novu.co/notification-center/vue-component), [React](https://docs.novu.co/notification-center/react/react-components), [Angular](https://docs.novu.co/notification-center/angular-component) and [Vanilla JS](https://docs.novu.co/notification-center/web-component).

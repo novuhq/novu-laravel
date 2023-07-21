@@ -1,7 +1,7 @@
 <notification-center-component
-      style="{{ $style }}"
-      application-identifier="{!! $appId !!}"
-      subscriber-id="{!! $subscriberId !!}"
+      style="{{ $style ?? '' }}"
+      application-identifier="{!! $appId ?? '' !!}"
+      subscriber-id="{!! $subscriberId ?? '' !!}"
     ></notification-center-component>
 
 
