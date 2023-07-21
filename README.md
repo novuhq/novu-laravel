@@ -128,9 +128,9 @@ Use the `x-notification-center` Blade notification center component in the body 
 
 ---
 
-## Note:
+## Important Info
 
-You can use the `Novu` Facade or the `novu()` helper function.
+You can use the `Novu` Facade or the `novu()` helper function to call the methods in this package.
 
 ---
 
