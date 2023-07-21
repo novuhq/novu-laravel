@@ -22,7 +22,7 @@
         "laravel 10"
     ],
     "require": {
-        "php": ">=7.2",
+        "php": ">=7.3",
         "ext-json": "*",
         "illuminate/support": "~6|~7|~8|^9.0|^10.0",
         "unicodeveloper/novu": "^1.0"

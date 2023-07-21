@@ -126,6 +126,14 @@ Use the `x-notification-center` Blade notification center component in the body 
 
 **Note:** If you're using this package for a Laravel API Backend, you don't need to use this! Use the In-App Notification Center JavaScript library available for [Vue](https://docs.novu.co/notification-center/vue-component), [React](https://docs.novu.co/notification-center/react/react-components), [Angular](https://docs.novu.co/notification-center/angular-component) and [Vanilla JS](https://docs.novu.co/notification-center/web-component).
 
+---
+
+## Note:
+
+You can use the `Novu` Facade or the `novu()` helper function.
+
+---
+
 ### EVENTS
 
 **Trigger** an event - send notification to subscribers:
@@ -134,11 +142,21 @@ Use the `x-notification-center` Blade notification center component in the body 
 use Novu\Laravel\Facades\Novu;
 
 $response = Novu::triggerEvent([
-    'name' => '<REPLACE_WITH_TEMPLATE_NAME_FROM_ADMIN_PANEL>',
+    'name' => '<REPLACE_WITH_WORKFLOW_ID_FROM_ADMIN_PANEL>',
     'payload' => ['customVariables' => 'Hello'],
     'to' => [
-        'subscriberId' => '<SUBSCRIBER_IDENTIFIER_FROM_ADMIN_PANEL>',
-        'phone' => '07983882186'
+        'subscriberId' => '<SUBSCRIBER_ID_FROM_ADMIN_PANEL>',
+        'phone' => '07983887777'
+    ]
+])->toArray();
+
+// or you can use the novu() helper function like so:
+novu()->triggerEvent([
+    'name' => '<REPLACE_WITH_WORKFLOW_ID_FROM_ADMIN_PANEL>',
+    'payload' => ['customVariables' => 'Hello'],
+    'to' => [
+        'subscriberId' => '<SUBSCRIBER_ID_FROM_ADMIN_PANEL>',
+        'phone' => '07983887777'
     ]
 ])->toArray();
 ```
@@ -150,18 +168,37 @@ use Novu\Laravel\Facades\Novu;
 
 $response = Novu::bulkTriggerEvent([
     [
-        'name' => '<REPLACE_WITH_TEMPLATE_NAME_FROM_ADMIN_PANEL>', 
-        'to' => '<SUBSCRIBER_IDENTIFIER_FROM_ADMIN_PANEL>', 
+        'name' => '<REPLACE_WITH_WORKFLOW_TRIGGER_ID_FROM_ADMIN_PANEL>', 
+        'to' => '<SUBSCRIBER_ID_FROM_ADMIN_PANEL>', 
         'payload' => ['customVariables' => 'Hello']
     ],
     [
-        'name' => '<REPLACE_WITH_TEMPLATE_NAME_FROM_ADMIN_PANEL>', 
-        'to' => '<SUBSCRIBER_IDENTIFIER_FROM_ADMIN_PANEL>', 
+        'name' => '<REPLACE_WITH_WORKFLOW_TRIGGER_ID_FROM_ADMIN_PANEL>', 
+        'to' => '<SUBSCRIBER_ID_FROM_ADMIN_PANEL>', 
         'payload' => ['customVariables' => 'World']
     ],
     [
-        'name' => '<REPLACE_WITH_TEMPLATE_NAME_FROM_ADMIN_PANEL>', 
-        'to' => '<SUBSCRIBER_IDENTIFIER_FROM_ADMIN_PANEL>', 
+        'name' => '<REPLACE_WITH_WORKFLOW_TRIGGER_ID_FROM_ADMIN_PANEL>', 
+        'to' => '<SUBSCRIBER_ID_FROM_ADMIN_PANEL>', 
+        'payload' => ['customVariables' => 'Again']
+    ]
+])->toArray();
+
+// or you can use the novu() helper function like so:
+novu()->bulkTriggerEvent([
+    [
+        'name' => '<REPLACE_WITH_WORKFLOW_TRIGGER_ID_FROM_ADMIN_PANEL>', 
+        'to' => '<SUBSCRIBER_ID_FROM_ADMIN_PANEL>', 
+        'payload' => ['customVariables' => 'Hello']
+    ],
+    [
+        'name' => '<REPLACE_WITH_WORKFLOW_TRIGGER_ID_FROM_ADMIN_PANEL>', 
+        'to' => '<SUBSCRIBER_ID_FROM_ADMIN_PANEL>', 
+        'payload' => ['customVariables' => 'World']
+    ],
+    [
+        'name' => '<REPLACE_WITH_WORKFLOW_TRIGGER_ID_FROM_ADMIN_PANEL>', 
+        'to' => '<SUBSCRIBER_ID_FROM_ADMIN_PANEL>', 
         'payload' => ['customVariables' => 'Again']
     ]
 ])->toArray();
