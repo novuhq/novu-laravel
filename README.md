@@ -9,7 +9,11 @@
 
 # Novu for Laravel
 
-A package to easily integrate your Laravel application with Novu.
+[![Latest Stable Version](https://poser.pugx.org/novu/novu-laravel/v/stable.svg)](https://packagist.org/packages/novu/novu-laravel)
+[![License](https://poser.pugx.org/novu/novu-laravel/license.svg)](LICENSE.md)
+[![Total Downloads](https://img.shields.io/packagist/dt/novu/novu-laravel.svg)](https://packagist.org/packages/novu/novu-laravel)
+
+> A package to easily integrate your Laravel application with Novu.
 
 ## Contents
 
