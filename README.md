@@ -53,7 +53,7 @@ composer require novu/novu-laravel
 You can publish the configuration file using this command:
 
 ```bash
-php artisan vendor:publish --provider="Novu\Laravel\NovuServiceProvider" --tag="novu-laravel-config"
+php artisan vendor:publish --tag="novu-laravel-config"
 ```
 
 A configuration file named `novu.php` with some sensible defaults will be placed in your `config` directory:
