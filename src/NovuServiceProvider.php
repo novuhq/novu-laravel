@@ -116,9 +116,16 @@ class NovuServiceProvider extends ServiceProvider
             'novu',
             function ($app) {
                 $apiKey = config('novu.api_key');
+                $baseUri = config('novu.api_url');
 
                 if (! is_string($apiKey)) {
                     throw ApiKeyIsMissing::create();
+                }
+
+                if (is_string($baseUri)) {
+                    $config['apiKey'] = $apiKey;
+                    $config['baseUri'] = $baseUri;
+                    return new Novu($config);
                 }
 
                 return new Novu($apiKey);
