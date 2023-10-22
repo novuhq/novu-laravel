@@ -28,6 +28,7 @@
     * [Topics](#topics)
     * [Activity](#activity)
     * [Integrations](#integrations)
+    * [Layouts](#layouts)
     * [Notifications](#notifications)
     * [Notification Templates](#notification-templates)
     * [Notification Groups](#notification-groups)
