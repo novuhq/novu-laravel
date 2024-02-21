@@ -21,12 +21,14 @@
 
 * [Installation](#installation)
 * [Usage](#usage)
+    * [Novu API Reference](https://docs.novu.co/api-reference/)
     * [In-App Notifications](#in-app-notification-center)
     * [Events](#events)
     * [Subscribers](#subscribers)
     * [Topics](#topics)
     * [Activity](#activity)
     * [Integrations](#integrations)
+    * [Layouts](#layouts)
     * [Notifications](#notifications)
     * [Notification Templates](#notification-templates)
     * [Notification Groups](#notification-groups)
@@ -35,6 +37,7 @@
     * [Feeds](#feeds)
     * [Messages](#messages)
     * [Execution Details](#execution-details)
+    * [Tenants](#tenants)
     * [Validate the MX Record setup for Inbound Parse functionality](#validate-the-mx-record-setup-for-inbound-parse-functionality)
 * [Configuration](#configuration)
 * [License](#license)
@@ -258,13 +261,31 @@ $subscribers  = Novu::getSubscriberList();
 
 // Create subscriber & get the details of the recently created subscriber returned.
 $subscriber = Novu::createSubscriber([
-    'subscriberId' => 'YOUR_SYSTEM_USER_ID>',
+    'subscriberId' => '<YOUR_SYSTEM_USER_ID>',
     'email' => '<insert-email>', // optional
     'firstName' => '<insert-firstname>', // optional
     'lastName' => '<insert-lastname>', // optional
     'phone' => '<insert-phone>', //optional
     'avatar' => '<insert-avatar>', // optional
 ])->toArray();
+
+// Bulk create subscribers
+$response = Novu::bulkCreateSubscribers([
+    [
+        'subscriberId' => '<SUBSCRIBER_IDENTIFIER>',
+        'email' => '<insert-email>', // optional
+        'firstName' => '<insert-firstname>', // optional
+        'lastName' => '<insert-lastname>', // optional
+        'avatar' => '<insert-avatar>', // optional
+    ],
+    [
+        'subscriberId' => '<SUBSCRIBER_IDENTIFIER>',
+        'email' => '<insert-email>', // optional
+        'firstName' => '<insert-firstname>', // optional
+        'lastName' => '<insert-lastname>', // optional
+        'avatar' => '<insert-avatar>', // optional
+    ],
+]);
 
 // Get subscriber
 $subscriber = Novu::getSubscriber($subscriberId)->toArray();
@@ -402,6 +423,39 @@ Novu::updateIntegration($integrationId, [
 
 // Delete integration
 Novu::deleteIntegration($integrationId);
+
+```
+
+### LAYOUTS
+
+```php
+use Novu\Laravel\Facades\Novu;
+
+// filter layouts
+Novu::filterLayouts(['pageSize' => 1])->toArray();
+
+// Create layout
+Novu::createLayout([
+    'name' => '<insert-name-of-layout>',
+    'identifier' => '<insert-identifier>',
+    'content' => '<insert-html-content>',
+])->toArray();
+
+// Get a layout
+Novu::getLayout('<insert-layout-id>')->toArray();
+
+// Set Layout as default
+Novu::setLayoutAsDefault('<insert-layout-id>');
+
+// Update layout
+Novu::updateLayout('<insert-layout-id>', [
+    'name' => '<insert-name-of-layout>',
+    'identifier' => '<insert-identifier>',
+    'content' => '<insert-html-content>',
+])->toArray();
+
+// Delete layout
+Novu::deleteLayout('<insert-layout-id>');
 
 ```
 
@@ -581,14 +635,17 @@ Novu::deleteFeed();
 use Novu\Laravel\Facades\Novu;
 
 // Get messages
-Novu::getMessages();
+Novu::getMessages([
+    'page' => 1,
+    'channel' => ['<insert-channel>'],
+]);
 
 // Delete message
 Novu::deleteMessage();
 
 ```
 
-## EXECUTION DETAILS
+### EXECUTION DETAILS
 
 ```php
 use Novu\Laravel\Facades\Novu;
@@ -598,6 +655,22 @@ Novu::getExecutionDetails([
     'notificationId' => '<insert-notification-id>',
     'subscriberId'   => '<insert-subscriber-id>'
 ])->toArray();
+
+```
+
+### TENANTS
+
+```php
+use Novu\Laravel\Facades\Novu;
+
+// Create tenant
+Novu::createTenant([
+    'identifier' => '<identifier>',
+    'name' => '<name>',
+]);
+
+// Get tenants
+Novu::getTenants()->toArray();
 
 ```
 
