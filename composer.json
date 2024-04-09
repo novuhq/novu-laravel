@@ -19,12 +19,13 @@
         "php",
         "laravel 8",
         "laravel 9",
-        "laravel 10"
+        "laravel 10",
+        "laravel 11"
     ],
     "require": {
-        "php": ">=7.3",
+        "php": "^7.3|^8.0|^8.1",
         "ext-json": "*",
-        "illuminate/support": "~6|~7|~8|^9.0|^10.0",
+        "illuminate/support": "~6|~7|~8|^9.0|^10.0|^11.0",
         "unicodeveloper/novu": "^1.2"
     },
     "require-dev": {
